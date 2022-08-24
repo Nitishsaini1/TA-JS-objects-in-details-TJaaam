@@ -1,4 +1,4 @@
-If we want to build any app the two most important thing to think about is Data and Behavior. So for our quiz app let's break it down. To make a quiz app we need to create Single Question object.
+ If we want to build any app the two most important thing to think about is Data and Behavior. So for our quiz app let's break it down. To make a quiz app we need to create Single Question object.
 
 ### For single question we need the following data and methods:
 
@@ -21,6 +21,7 @@ For each different ways of creating object write different solutions.
 - Write test by creating two objects also test both methods.
 
 ### To test use the following data
+
 
 ```js
 const testData = {
