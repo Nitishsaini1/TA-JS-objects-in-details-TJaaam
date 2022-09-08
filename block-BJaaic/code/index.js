@@ -33,3 +33,4 @@ let dogsMethods = {
     return `I am ${this.name} and I am of ${this.color} color. I can also bark`;
   },
 };
+
