@@ -3,51 +3,52 @@
 For the give code below write the output/error along with the reason!
 
 ```js
+
 let user = {
-  username: 'John',
-  sayHello(message = 'Hello') {
-    console.log(message + ' ' + this.username);
-  },
-};
-
-let user2 = {
-  username: 'Arya',
-  sayHello(message = 'Hello') {
-    console.log(message + ' ' + this.username);
-  },
-};
-let user3 = {
-  username: 'Bran',
-};
-
-function MainUser() {
-  this.username = 'Tyrion';
-  this.sayHello = function sayHello(message = 'Hello') {
-    console.log(message + ' ' + this.username);
+    username: 'John',
+    sayHello(message = 'Hello') {
+      console.log(message + ' ' + this.username);
+    },
   };
-}
-
-let userSayHello = user.sayHello;
-
-console.log(user.sayHello()); // output / error
-console.log(user2.sayHello()); // output / error
-console.log(user.sayHello.call(user2)); // output / error
-console.log(user.sayHello.call(user2, 'Hey')); // output / error
-console.log(user.sayHello.apply(user2, ['Hey'])); // output / error
-console.log(typeof user.sayHello.bind(user2)); // output / error
-console.log(user.sayHello.bind(user2)()); // output / error
-console.log(userSayHello()); // output / error
-console.log(typeof userSayHello.bind(user2)); // output / error
-console.log(userSayHello.bind(user2)()); // output / error
-console.log(user3.sayHello()); // output / error
-console.log(userSayHello.apply(user3)); // output / error
-console.log(userSayHello.call(user3)); // output / error
-console.log(typeof new MainUser()); // output / error
-console.log(typeof new MainUser()); // output / error
-console.log(new MainUser().sayHello()); // output / error
-console.log(new MainUser().sayHello.call(user2)); // output / error
-console.log(new MainUser().sayHello.call(user)); // output / error
-console.log(
-  new MainUser().sayHello.apply(user, ['Welcome!'])
-); // output / error
+  
+  let user2 = {
+    username: 'Arya',
+    sayHello(message = 'Hello') {
+      console.log(message + ' ' + this.username);
+    },
+  };
+  let user3 = {
+    username: 'Bran',
+  };
+  
+  function MainUser() {
+    this.username = 'Tyrion';
+    this.sayHello = function sayHello(message = 'Hello') {
+      console.log(message + ' ' + this.username);
+    };
+  }
+  
+  let userSayHello = user.sayHello;
+  
+  console.log(user.sayHello()); // Hello John / undefined
+  console.log(user2.sayHello()); // Hello Arya / undefined
+  console.log(user.sayHello.call(user2)); // Hello Arya / undefined
+  console.log(user.sayHello.call(user2, 'Hey')); // Hey Arya / undefined
+  console.log(user.sayHello.apply(user2, ['Hey'])); // Hey Arya / undefined
+  console.log(typeof user.sayHello.bind(user2)); // function / undefined
+  console.log(user.sayHello.bind(user2)()); // Hello Arya  / undefined
+  console.log(userSayHello()); // Hello undefined / undefined
+  console.log(typeof userSayHello.bind(user2)); // function / undefined
+  console.log(userSayHello.bind(user2)()); // Hello Arya / undefined
+  console.log(user3.sayHello()); // TypeError because user3 is not a function 
+  console.log(userSayHello.apply(user3)); // Hello Bran / undefined
+  console.log(userSayHello.call(user3)); // Hello Bran / undefined
+  console.log(typeof new MainUser()); // object / undefined
+  console.log(typeof new MainUser()); // object / undefined
+  console.log(new MainUser().sayHello()); // Hello Tyrion / undefined
+  console.log(new MainUser().sayHello.call(user2)); // Hello Arya / undefined
+  console.log(new MainUser().sayHello.call(user)); // Hello John / undefined
+  console.log(
+    new MainUser().sayHello.apply(user, ['Welcome!'])
+  ); // Welcome! John / undefined
 ```
