@@ -1,5 +1,6 @@
 ## Stack and Queue
 
+
 To understand how stack and queue works look at the following diagrams.
 
 Stack
