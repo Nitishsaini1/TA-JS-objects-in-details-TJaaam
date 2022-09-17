@@ -3,6 +3,7 @@
 - [ ] Create a class BookList
 - [ ] Create another class called Book
 
+
 #### Each Book should have several properties:
 
 1. Title
