@@ -35,3 +35,13 @@ class BookList{
             return this.currentIndexBook;    
         }
     }
+
+    let book1 = new Book();
+    let book2 = new Book();
+    let book3 = new Book();
+    let book4 = new Book();
+    let book5 = new Book();
+
+    let library = new BookList(); 
+
+    library.add(book1, book2, book3, book4, book5);
